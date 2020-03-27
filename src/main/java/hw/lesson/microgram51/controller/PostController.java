@@ -22,8 +22,6 @@ public class PostController {
     @Autowired
     private UserService userService;
 
-
-
     @DeleteMapping("/")
     public void removePost( @RequestParam("id") int id) {
         userService.removePostById(id);

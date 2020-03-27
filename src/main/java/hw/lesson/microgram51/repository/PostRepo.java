@@ -12,8 +12,5 @@ import java.util.Optional;
 public interface PostRepo extends CrudRepository<Post, String> {
 
     public Optional<Post> findById(String id);
-
-    public void deleteAllByIdAndUser(int id, String email, User user);
-
     public void deleteById(int id);
 }

@@ -26,8 +26,8 @@ public class PostService {
         this.commentRepo=commentRepo;
         this.userRepo=userRepo;
     }
-    public void removeSubscriptionByIdAndEmail(int id, String email) {
-        postRepo.deleteAllByIdAndUser(id, email, this.getUser());
+    public void removePostById(String id) {
+        postRepo.deleteById(id);
     }
     private User getUser() {
         // get current authenticated user

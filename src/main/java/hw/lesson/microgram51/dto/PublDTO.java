@@ -10,6 +10,5 @@ public class PublDTO {
     private String id;
     private LocalDateTime timePub;
     private String description;
-    private UserDTO user;
     private int publications = 0;
 }
