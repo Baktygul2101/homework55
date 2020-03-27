@@ -1,6 +1,7 @@
 package hw.lesson.microgram51.service;
 
 
+import hw.lesson.microgram51.model.Post;
 import hw.lesson.microgram51.model.User;
 import hw.lesson.microgram51.repository.CommentRepo;
 import hw.lesson.microgram51.repository.PostRepo;
@@ -8,6 +9,9 @@ import hw.lesson.microgram51.repository.UserRepo;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
@@ -30,4 +34,5 @@ public class PostService {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return userRepo.findByUsername(auth.getName()).get();
     }
+
 }

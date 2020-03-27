@@ -1,22 +1,34 @@
 package hw.lesson.microgram51.controller;
 
 
+import hw.lesson.microgram51.model.Post;
+import hw.lesson.microgram51.model.User;
 import hw.lesson.microgram51.service.CommentService;
 import hw.lesson.microgram51.service.PostService;
-import org.springframework.web.bind.annotation.RestController;
+import hw.lesson.microgram51.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/post")
 public class PostController {
+    @Autowired
+    private  CommentService commentService;
+    @Autowired
+    private  PostService postService;
 
-    private final CommentService commentService;
-    private final PostService postService;
+    @Autowired
+    private UserService userService;
 
 
 
-    public PostController(CommentService commentService, PostService postService) {
-        this.commentService = commentService;
-        this.postService = postService;
+    @DeleteMapping("/")
+    public void removePost( @RequestParam("id") int id) {
+        userService.removePostById(id);
     }
+
 
 
 
