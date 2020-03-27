@@ -20,11 +20,11 @@ public  class Post {
     @Id
 
     private String id;
-    // здесь будем сохранять картинку
     @Builder.Default
     private Binary posterData = new Binary(new byte[0]);
     private LocalDateTime timePub;
     private String description;
+    private User user;
     //  private List<Comment> comments = new ArrayList<>();
     @Indexed
     private int publications = 0;
